@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parkir Bre'eh</title>
+</head>
+<body>
+    <h1>Parkir Bre'eh</h1>
+    <label for="in">Jam Masuk: </label>
+    <input type="number" id="in" name="in">
+    <br>
+    <label for="out">Jam Keluar: </label>
+    <input type="number" id="out">
+    <br>
+    <span id="durasi"></span>
+    <br>
+    <span id="hasil"></span>
+    <br>
+    <button type="button">Hitung</button>
+    <script>
+        function hitung_parkir(){
+            let masuk = document.getElementById("in").value;
+            let keluar = document.getElementById("out").value;
+            let durasi = keluar - masuk;
+            document.getElementById("durasi").innerHTML = "Durasi Parkir: " + durasi + " Jam";
+            let tarif_per_jam = 3500;
+            let total_biaya = durasi * tarif_per_jam;
+            document.getElementById("hasil").innerHTML = "Total Biaya Parkir: Rp " + total_biaya;
+        }
+
+        document.querySelector("button").onclick = hitung_parkir;
+    </script>
+</body>
+</html>
